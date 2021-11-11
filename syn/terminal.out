@@ -1,0 +1,302 @@
+Script started on Wed 10 Nov 2021 07:49:41 PM PST
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version Q-2019.12-SP3 for linux64 - Apr 21, 2020 
+
+                    Copyright (c) 1988 - 2020 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+lappend search_path [exec pwd]
+. /pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn /pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/dw/syn_ver /pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/dw/sim_ver /u/vk5/college/581/vk5/proj3/prob3/syn
+set target_library [concat [exec pwd]/osu05_stdcells.db]
+/u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db
+set link_library [concat "*" $target_library]
+* /u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db
+link
+Error: Current design is not defined. (UID-4)
+0
+read_file -format sverilog ../hdl/gray_code_adder.sv
+Loading db file '/u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/standard.sldb'
+  Loading link library 'osu05_stdcells'
+  Loading link library 'gtech'
+Loading sverilog file '/u/vk5/college/581/vk5/proj3/prob3/hdl/gray_code_adder.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /u/vk5/college/581/vk5/proj3/prob3/hdl/gray_code_adder.sv
+Presto compilation completed successfully.
+Current design is now '/u/vk5/college/581/vk5/proj3/prob3/hdl/bin2gray.db:bin2gray'
+Loaded 3 designs.
+Current design is 'bin2gray'.
+bin2gray gray2bin gray_code_adder
+current_design gray_code_adder
+Current design is 'gray_code_adder'.
+{gray_code_adder}
+compile -exact_map
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Q-2019.12-DWBB_201912.3 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'bin2gray'
+  Processing 'gray2bin_0'
+  Processing 'gray_code_adder'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'gray_code_adder' has no optimization constraints set. (OPT-108)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'gray2bin_1'
+  Mapping 'gray2bin_1'
+  Structuring 'bin2gray'
+  Mapping 'bin2gray'
+  Structuring 'gray2bin_0'
+  Mapping 'gray2bin_0'
+  Structuring 'gray_code_adder'
+  Mapping 'gray_code_adder'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+    0:00:04   10611.0      0.00       0.0       0.0                          
+Loading db file '/u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+report_cell
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : cell
+Design : gray_code_adder
+Version: Q-2019.12-SP3
+Date   : Wed Nov 10 19:49:45 2021
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U21                       XOR2X1          osu05_stdcells  504.000000
+U22                       XOR2X1          osu05_stdcells  504.000000
+U23                       OAI21X1         osu05_stdcells  207.000000
+U24                       OAI21X1         osu05_stdcells  207.000000
+U25                       XNOR2X1         osu05_stdcells  504.000000
+U26                       XNOR2X1         osu05_stdcells  504.000000
+U27                       INVX1           osu05_stdcells  144.000000
+U28                       INVX1           osu05_stdcells  144.000000
+U29                       OAI21X1         osu05_stdcells  207.000000
+U30                       OAI21X1         osu05_stdcells  207.000000
+U31                       INVX1           osu05_stdcells  144.000000
+U32                       XNOR2X1         osu05_stdcells  504.000000
+U33                       XNOR2X1         osu05_stdcells  504.000000
+U34                       INVX1           osu05_stdcells  144.000000
+U35                       OAI21X1         osu05_stdcells  207.000000
+U36                       INVX1           osu05_stdcells  144.000000
+U37                       AOI21X1         osu05_stdcells  288.000000
+U38                       XOR2X1          osu05_stdcells  504.000000
+U39                       XOR2X1          osu05_stdcells  504.000000
+bin_a                     gray2bin_0                      1512.000000
+                                                                    h
+bin_b                     gray2bin_1                      1512.000000
+                                                                    h
+gray_sum                  bin2gray                        1512.000000
+                                                                    h
+--------------------------------------------------------------------------------
+Total 22 cells                                            10611.000000
+1
+report_area
+ 
+****************************************
+Report : area
+Design : gray_code_adder
+Version: Q-2019.12-SP3
+Date   : Wed Nov 10 19:49:45 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    osu05_stdcells (File: /u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db)
+
+Number of ports:                           38
+Number of nets:                            62
+Number of cells:                           32
+Number of combinational cells:             28
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          5
+Number of references:                       8
+
+Combinational area:              10611.000000
+Buf/Inv area:                      720.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 10611.000000
+Total area:                 undefined
+1
+report_power
+Loading db file '/u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : gray_code_adder
+Version: Q-2019.12-SP3
+Date   : Wed Nov 10 19:49:46 2021
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   9.0286 mW   (55%)
+  Net Switching Power  =   7.3853 mW   (45%)
+                         ---------
+Total Dynamic Power    =  16.4139 mW  (100%)
+
+Cell Leakage Power     =   3.6476 nW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      9.0286            7.3853            3.6476           16.4139  ( 100.00%)
+--------------------------------------------------------------------------------------------------
+Total              9.0286 mW         7.3853 mW         3.6476 nW        16.4139 mW
+1
+write -format Verilog -hierarchy -output gray_code_adder.netlist
+Writing verilog file '/u/vk5/college/581/vk5/proj3/prob3/syn/gray_code_adder.netlist'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+link
+
+  Linking design 'gray_code_adder'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /u/vk5/college/581/vk5/proj3/prob3/hdl/gray_code_adder.db, etc
+  osu05_stdcells (library)    /u/vk5/college/581/vk5/proj3/prob3/syn/osu05_stdcells.db
+  bin2gray                    /u/vk5/college/581/vk5/proj3/prob3/hdl/bin2gray.db
+
+1
+quit
+
+Memory usage for this session 67 Mbytes.
+Memory usage for this session including child processes 67 Mbytes.
+CPU usage for this session 3 seconds ( 0.00 hours ).
+Elapsed time for this session 5 seconds ( 0.00 hours ).
+
+Thank you...
+
+Script done on Wed 10 Nov 2021 07:49:46 PM PST

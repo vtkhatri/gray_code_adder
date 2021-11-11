@@ -1,1 +1,4 @@
 sim/work
+syn/*.log
+syn/*.svf
+syn/*.netlist
