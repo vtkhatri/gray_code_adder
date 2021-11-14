@@ -50,7 +50,7 @@ end
 endmodule : gray2bin
 
 // gray code adder
-module gray_code_adder
+module gray_code_adder_sv
 #(
 	WIDTH = 4
 )
@@ -68,4 +68,4 @@ gray2bin bin_b(.bin(b_bin), .gray(b));
 assign {co, sum_bin} = { a_bin + b_bin + ci };
 bin2gray gray_sum(.gray(sum), .bin(sum_bin));
 
-endmodule : gray_code_adder
+endmodule : gray_code_adder_sv

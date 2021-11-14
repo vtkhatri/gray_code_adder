@@ -9,13 +9,15 @@
  * as title states
  ****************************************************************/
 
+`timescale 1ns/10ps
 module tb_gray_code_adder;
 
 parameter WIDTH=4;
-logic [WIDTH-1:0] a, b, sum, a_bin, b_bin, sum_gray, sum_dummy;
+logic [WIDTH-1:0] a, b, sum, a_bin, b_bin, sum_gray, sum_dummy, sum_syn;
 logic ci, co, co_dummy;
 
-gray_code_adder DUT(.*);
+gray_code_adder_sv DUT0(.*);
+gray_code_adder    DUT1(.*, .sum(sum_syn));
 gray2bin a2bin(.bin(a_bin), .gray(a));
 gray2bin b2bin(.bin(b_bin), .gray(b));
 bin2gray sum2gray(.gray(sum_gray), .bin(sum_dummy));
@@ -34,7 +36,7 @@ initial begin
 			#10;
 			{co_dummy, sum_dummy} = a_bin+b_bin;
 			#10;
-			$display("input gray => %b,%b || calculated bin => %b,%b || sum bin => %b || sum gray (tb,module) =>%b,%b", a, b, a_bin, b_bin, sum_dummy, sum_gray, sum);
+			$display("input gray => %b,%b || sum gray (tb,module,synthesized) =>%b,%b,%b", a, b, sum_gray, sum, sum_syn);
 		end
 	end
 	$finish;
